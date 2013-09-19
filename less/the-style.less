@@ -1,4 +1,4 @@
-
+p {font-size: 14px}
 
 .wrapper {
 	border-top: 5px solid #edf5fc;
@@ -330,11 +330,73 @@ a.brand.with-logo {
 }
 
 .subtitle {
-	border: 1px solid @grayLight;
-	padding: 5px 10px;
-	margin: 5px;
-	.border-radius(3px);
-	#gradient > .vertical(@dfsBlue, @dfsBlueDarker);
-	color: @white;
-	text-shadow: 0 1px rgba(0,0,0,.5);
+	border: 1px solid transparent;
+	border-bottom-color: @grayLighter;
+	.box-shadow(inset 0 -1px @white);
+	padding: 10px;
+	margin: -3px -3px 10px;
+	#gradient > .vertical(lighten(@grayLighter, 5%), @grayLighter);
+	color: @dfsBlue;
+	text-shadow: 0 1px rgba(255,255,255,.5);
+
+	&:first-child {
+		.border-top-radius(3px);
+	}
+}
+
+.subtitle-mini {
+	color: @grayDark;
+	border-top: 1px solid @grayLighter;
+	border-bottom: 1px solid @grayLighter;
+	margin: 5px -4px;
+	padding: 3px 10px;
+	#gradient > .vertical(@white, lighten(@grayLighter, 3%));
+	.box-shadow(inset 0 -1px @white);
+
+	&:first-child {
+		margin-top: -4px;
+	}
+
+	&.for-price-table {
+		#gradient > .vertical(@white, #DDE4FA);
+	}
+}
+
+table {
+	font-size: 12px;
+}
+
+.text-small {
+	font-size: 12px;
+	margin: 0 5px;
+}
+
+.thumbnail > p {margin-left: 8px; margin-right: 8px;}
+
+.price-table {
+
+	.thumbnail {
+		padding: 0;
+		color: @grayLight;
+
+		.subtitle-mini {
+			font-size: 20px;
+			color: @gray;
+			padding: 15px 0;
+			margin: 0;
+		}
+
+		section {
+			padding: 15px 0;
+			border-bottom:1px solid @grayLighter	;
+		}
+
+		h4{color: @grayLight;}
+
+		hr {margin: 5px 0;}
+	}
+
+	.price-table-buy {
+		padding: 15px 10px;
+	}
 }
